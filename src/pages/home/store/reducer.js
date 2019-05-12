@@ -13,6 +13,8 @@ export default (state = defaultState, action) => {
         articleList: fromJS(action.articleList),
         recommendList: fromJS(action.recommendList),
       })
+    case constants.CHANGE_ARTICLE_LIST:
+      return state.set('articleList', state.get('articleList').concat(action.articleList))
     default :
       return state;
   }
